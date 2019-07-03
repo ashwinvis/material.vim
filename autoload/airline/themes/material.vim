@@ -23,18 +23,18 @@ let s:gui.purple       = { 'darker': '#C792EA', 'lighter': '#7C4DFF', 'palenight
 let s:gui.violet       = { 'darker': '#BB80B3', 'lighter': '#945EB8', 'palenight': '#BB80B3', 'ocean': '#BB80B3'  }
 let s:gui.brown        = { 'darker': '#AB7967', 'lighter': '#AB7967', 'palenight': '#C17E70', 'ocean': '#C17E70'  }
 
-if !exists('g:material_style')
-  let g:material_style='default'
+if !exists('g:material_theme_style')
+  let g:material_theme_style='default'
 endif
 
 function! s:gui(color)
   if &background == "lighter"
     return a:color['lighter']
   else
-    if g:material_style == 'default'
+    if g:material_theme_style == 'default'
       return a:color['darker']
     else
-      return a:color[g:material_style]
+      return a:color[g:material_theme_style]
     endif
   endif
 endfunction
